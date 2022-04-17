@@ -1,0 +1,35 @@
+.description-image img{
+    width: 600px;
+    border-radius: 15px;
+    margin-right: 70px;
+}
+.description-container{
+    margin-top: 100px;
+    display: flex;
+    justify-content: space-around;
+    align-content: stretch;
+    align-items: center;
+}
+.text-description {
+    margin-left: 70px;
+    font-size: 20px;
+    text-align: left;
+}
+
+@media only screen and (max-width:520px) {
+    .description-container {
+        margin-top: 100px;
+        display: grid;
+        grid-template-columns: repeat(1,1fr);
+    }
+    .description-image img{
+        width: 330px;
+        margin: 0;
+    }
+    .text-description{
+        margin-left: 0px;
+        font-size: 17px;
+        text-align: center;
+    }
+
+}

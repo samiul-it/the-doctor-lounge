@@ -3,15 +3,8 @@
         "id": 1,
         "serviceName": "Skin and Dermatology Care",
         "fees": 150,
-        "description": "Skin and Dermatology car will provide you a free screening of your body and doctor will provide you the solutions.",
+        "description": "Skin and Dermatology car will provide you a free screening of your body and doctor will provide you the solutions with detailed report.",
         "img": "https://i.ibb.co/KDMy07y/service-photo-1.jpg"
-    },
-    {
-        "id": 2,
-        "serviceName": "Private Counselling",
-        "fees": 100,
-        "description": "Our private counselling service will provide you 30mins long private consultation with doctor.",
-        "img": "https://i.ibb.co/QYYgc3t/service-photo-2.jpg"
     },
     {
         "id":3,
