@@ -1,0 +1,30 @@
+[
+    {
+        "id": 1,
+        "serviceName": "Skin and Dermatology Care",
+        "fees": 150,
+        "description": "Skin and Dermatology car will provide you a free screening of your body and doctor will provide you the solutions.",
+        "img": "https://i.ibb.co/KDMy07y/service-photo-1.jpg"
+    },
+    {
+        "id": 2,
+        "serviceName": "Private Counselling",
+        "fees": 100,
+        "description": "Our private counselling service will provide you 30mins long private consultation with doctor.",
+        "img": "https://i.ibb.co/QYYgc3t/service-photo-2.jpg"
+    },
+    {
+        "id":3,
+        "serviceName": "Video Consultation",
+        "fees": 120,
+        "description": "During this pandemic situation you can consult with our doctor remotely.To avail this please create a account on our portal.",
+        "img": "https://i.ibb.co/8Pqy5CB/service-photo-3.jpg"
+    },
+    {
+        "id": 4,
+        "serviceName": "Ultrasonography",
+        "fees": 200,
+        "description": "Ultrasonography with our powerful Mitsubishi USG machine will provide you a clear ultrasonography photograph and detailed report.",
+        "img": "https://i.ibb.co/QmVms8y/service-photo-4.jpg"
+    }
+]

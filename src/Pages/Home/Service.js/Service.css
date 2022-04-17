@@ -1,0 +1,10 @@
+.service-img img{
+    width: 400px;
+    margin-top: 10px;
+    border-radius: 5px;
+}
+.service-container{
+   border: 2px solid rebeccapurple;
+   margin: 5px;
+   padding: 5px;
+}
