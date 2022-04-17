@@ -1,7 +1,7 @@
 import React from 'react';
 import { Link, useLocation } from 'react-router-dom';
 import { useNavigate } from 'react-router-dom';
-import { useRef } from 'react';
+import { useRef, useEffect } from 'react';
 import { useSignInWithEmailAndPassword } from 'react-firebase-hooks/auth';
 import auth from './../../../Firebase/firebase.init';
 import Loading from './../../Loading/Loading';
@@ -31,9 +31,12 @@ const Login = () => {
     const navigateToLogin = () => {
       navigate("/login");
     };
-    if (user) {
-      navigate(from, { replace: true });
-    }
+    useEffect(()=>{
+        if (user) {
+          navigate(from, { replace: true });
+        }
+
+    },[user]);
 
     if (error) {
       return <h5 className="text-danger"> {error.message}</h5>;
