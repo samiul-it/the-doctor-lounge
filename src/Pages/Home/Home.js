@@ -1,4 +1,5 @@
 import React from 'react';
+import AvailService from '../AvailService/AvailService';
 import Footer from '../Shared/Footer/Footer';
 import Banner from './Banner/Banner';
 import Description from './Description/Description';
@@ -12,6 +13,7 @@ const Home = () => {
         <Banner></Banner>
         <Services/>
         <Description></Description>
+        <AvailService></AvailService>
       </div>
     );
 };
