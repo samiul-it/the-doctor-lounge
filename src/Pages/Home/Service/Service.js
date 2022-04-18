@@ -10,7 +10,6 @@ const Service = ({service}) => {
         navigate(`/services/${serviceName}`);
 
     }
-
     return (
         <div>
             <div className="service-container">
