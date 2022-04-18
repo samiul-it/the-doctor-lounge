@@ -6,10 +6,13 @@ import { Spinner } from "react-bootstrap";
 import { Link, useNavigate } from "react-router-dom";
 import Loading from "../../Loading/Loading";
 import GoogleLogin from "../GoogleLogin/GoogleLogin";
+import { async } from "@firebase/util";
 
 const Signup = () => {
   const [createUserWithEmailAndPassword, user, loading, error] =
-    useCreateUserWithEmailAndPassword(auth);
+    useCreateUserWithEmailAndPassword(auth, {sendEmailVerification:true});
+
+  const [sendEmailVerification, sending] = useSendEmailVerification();  
   const emailRef = useRef("");
   const nameRef = useRef("");
   const passwordRef = useRef("");
@@ -23,9 +26,9 @@ const Signup = () => {
     const password = passwordRef.current.value;
     createUserWithEmailAndPassword(email,password);
     console.log("User Created!");
-    nevigate("/home");
-    console.log("Verification Email Sent");
+    nevigate("/home");    
   };
+
 
   const navigateToLogin=()=>{
       nevigate("/login");

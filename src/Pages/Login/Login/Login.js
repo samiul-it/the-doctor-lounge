@@ -67,7 +67,7 @@ const Login = () => {
             required
           />
           <br />
-          <button className="btn btn-warning">Register</button>
+          <button className="btn btn-warning">Login</button>
         </form>
         <GoogleLogin></GoogleLogin>
         <p>
