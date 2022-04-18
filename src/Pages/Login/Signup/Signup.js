@@ -43,7 +43,7 @@ const Signup = () => {
   }
 
   return (
-    <div>
+    <div className="signup-conatiner">
       <h2 className="text-primary">Signup</h2>
       <form onSubmit={handleSubmit}>
         <input

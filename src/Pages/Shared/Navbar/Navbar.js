@@ -5,6 +5,7 @@ import { useAuthState } from "react-firebase-hooks/auth";
 import {signOut} from "firebase/auth";
 import auth from './../../../Firebase/firebase.init';
 import Loading from '../../Loading/Loading';
+import icon from '../../../Resources/Images/doctor-icon.png';
 
 const Navbar = () => {
   const [user, loading, error] = useAuthState(auth);
@@ -20,9 +21,7 @@ const Navbar = () => {
       <div>
         <div className="nav-container">
           <div className="icon-container">
-            <Link to="/home">
-              {/* <img src="" alt="nav-icon" srcset="" /> */}
-            </Link>
+            
             <Link to="/home">
               <span className="title">The Doctor Lounge</span>
             </Link>

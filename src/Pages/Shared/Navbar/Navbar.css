@@ -37,8 +37,8 @@ a:hover {
 
 .icon-container img {
     height: 45px;
-    width: 75px;
-    opacity: 90%;
+    width: 65px;
+    opacity: 100%;
 
 }
 
@@ -63,9 +63,7 @@ a:hover {
         opacity: 90%;
 
     }
-    .title {
-        display: none;
-    }
+    
 
     .nav-container {
         background-color: rgb(20, 160, 220);

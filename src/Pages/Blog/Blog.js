@@ -3,6 +3,7 @@ import React from 'react';
 const Blog = () => {
     return (
       <div>
+        <br />
           <h2 className='text-primary'>Questions and Answers(3)</h2>
           <br />
         <h3 className="text-primary">

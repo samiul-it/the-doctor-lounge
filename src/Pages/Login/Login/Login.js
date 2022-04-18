@@ -12,6 +12,7 @@ import GoogleLogin from '../GoogleLogin/GoogleLogin';
 import { async } from '@firebase/util';
 import { ToastContainer, toast } from "react-toastify";
 import "react-toastify/dist/ReactToastify.css";
+import './Login.css';
 
 const Login = () => {
     const [signInWithEmailAndPassword, user, loading, error] =
@@ -36,6 +37,8 @@ const Login = () => {
       signInWithEmailAndPassword(email,password);
       console.log("Log in Successful");
       console.log(user);
+      
+     
     };
 
     const navigateToLogin = () => {
@@ -49,7 +52,7 @@ const Login = () => {
     },[user]);
 
     if (error) {
-      return <h5 className="text-danger"> {error.message}</h5>;
+      return <h5 className="text-danger">  {error.message}</h5>;
     }
     if (loading) {
       return <Loading></Loading>;
@@ -70,7 +73,7 @@ const Login = () => {
 
     }
     return (
-      <div>
+      <div className='login-container'>
         <h2 className="text-primary">Login</h2>
         <form onSubmit={handleSubmit}>
           <input
