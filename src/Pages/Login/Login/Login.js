@@ -5,6 +5,7 @@ import { useRef, useEffect } from 'react';
 import { useSignInWithEmailAndPassword } from 'react-firebase-hooks/auth';
 import auth from './../../../Firebase/firebase.init';
 import Loading from './../../Loading/Loading';
+import GoogleLogin from '../GoogleLogin/GoogleLogin';
 
 const Login = () => {
     const [signInWithEmailAndPassword, user, loading, error] =
@@ -46,7 +47,7 @@ const Login = () => {
     }
     return (
       <div>
-        <h2 className='text-primary'>Login</h2>
+        <h2 className="text-primary">Login</h2>
         <form onSubmit={handleSubmit}>
           <input
             ref={emailRef}
@@ -68,9 +69,14 @@ const Login = () => {
           <br />
           <button className="btn btn-warning">Register</button>
         </form>
+        <GoogleLogin></GoogleLogin>
         <p>
           Don't have account?{" "}
-          <Link className="text-primary" to="/register" onClick={navigateToLogin}>
+          <Link
+            className="text-primary"
+            to="/register"
+            onClick={navigateToLogin}
+          >
             {" "}
             Register Here{" "}
           </Link>

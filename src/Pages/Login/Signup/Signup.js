@@ -5,6 +5,7 @@ import { useCreateUserWithEmailAndPassword, useSendEmailVerification } from "rea
 import { Spinner } from "react-bootstrap";
 import { Link, useNavigate } from "react-router-dom";
 import Loading from "../../Loading/Loading";
+import GoogleLogin from "../GoogleLogin/GoogleLogin";
 
 const Signup = () => {
   const [createUserWithEmailAndPassword, user, loading, error] =
@@ -70,6 +71,7 @@ const Signup = () => {
         <br />
         <button className="btn btn-warning">Register</button>
       </form>
+      <GoogleLogin></GoogleLogin>
       <p>
         Already have an account? <Link className="text-primary" to="/login" onClick={navigateToLogin}> Login </Link>
       </p>
