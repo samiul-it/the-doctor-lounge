@@ -1,7 +1,5 @@
 import React, { useRef } from 'react';
 import { useParams } from 'react-router-dom';
-import CheckOut from '../CheckOut/CheckOut';
-import { useState } from "react";
 import { useAuthState } from 'react-firebase-hooks/auth';
 import auth from '../../Firebase/firebase.init';
 import { ToastContainer, toast } from "react-toastify";

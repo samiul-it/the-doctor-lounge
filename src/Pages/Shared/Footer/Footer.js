@@ -6,7 +6,7 @@ const Footer = () => {
     const date = new Date();
     let year = date.getFullYear();
     return (
-      <div>
+      <div className='footer'>
         <div className="footer-container">
           <div className="footer-text">
             <p>&copy; Samiul Islam Talukdar {year}</p>
