@@ -5,7 +5,7 @@ const AvailService = () => {
     const {serviceName}=useParams();
     return (
         <div>
-            <h1>Welcome to {serviceName}</h1>
+            <h1>Thank you for! Service Name: {serviceName}</h1>
         </div>
     );
 };

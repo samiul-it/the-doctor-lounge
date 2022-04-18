@@ -2,14 +2,23 @@ import React from 'react';
 import { Link, useLocation } from 'react-router-dom';
 import { useNavigate } from 'react-router-dom';
 import { useRef, useEffect } from 'react';
-import { useSignInWithEmailAndPassword } from 'react-firebase-hooks/auth';
+import {
+  useSignInWithEmailAndPassword,
+  useSendPasswordResetEmail,
+} from "react-firebase-hooks/auth";
 import auth from './../../../Firebase/firebase.init';
 import Loading from './../../Loading/Loading';
 import GoogleLogin from '../GoogleLogin/GoogleLogin';
+import { async } from '@firebase/util';
+import { ToastContainer, toast } from "react-toastify";
+import "react-toastify/dist/ReactToastify.css";
 
 const Login = () => {
     const [signInWithEmailAndPassword, user, loading, error] =
       useSignInWithEmailAndPassword(auth);
+
+    const [sendPasswordResetEmail, sending, errorReset] =
+      useSendPasswordResetEmail(auth);
 
 
     const emailRef = useRef("");
@@ -44,6 +53,17 @@ const Login = () => {
     }
     if (loading) {
       return <Loading></Loading>;
+    }
+    const handleResetPassword= async ()=>{
+      const emailForResetPass=emailRef.current.value;
+      if(emailForResetPass){
+        await sendPasswordResetEmail(emailForResetPass);
+        toast.info("Reset Password Mail Sent");
+      }
+      else{
+        toast.error("Enter Email Address");
+      }
+
     }
     return (
       <div>
@@ -80,7 +100,21 @@ const Login = () => {
             {" "}
             Register Here{" "}
           </Link>
+          <button className="btn btn-link" onClick={handleResetPassword}>
+            Reset Password
+          </button>
         </p>
+        <ToastContainer
+          position="top-right"
+          autoClose={5000}
+          hideProgressBar={false}
+          newestOnTop={false}
+          closeOnClick
+          rtl={false}
+          pauseOnFocusLoss
+          draggable
+          pauseOnHover
+        />
       </div>
     );
 };
