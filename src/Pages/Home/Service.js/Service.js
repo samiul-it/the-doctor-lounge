@@ -7,7 +7,7 @@ const Service = ({service}) => {
     const navigate=useNavigate();
 
     const navigateToAvailService=(serviceName)=>{
-        navigate(`/${serviceName}`);
+        navigate(`/services/${serviceName}`);
 
     }
 

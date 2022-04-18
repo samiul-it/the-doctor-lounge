@@ -58,10 +58,14 @@ const Login = () => {
       const emailForResetPass=emailRef.current.value;
       if(emailForResetPass){
         await sendPasswordResetEmail(emailForResetPass);
-        toast.info("Reset Password Mail Sent");
+        toast.info("Reset Password Mail Sent", {
+          theme: "colored",
+        });
       }
       else{
-        toast.error("Enter Email Address");
+        toast.error("Enter Email Address", {
+          theme: "colored",
+        });
       }
 
     }

@@ -10,6 +10,7 @@ import AvailService from './Pages/AvailService/AvailService';
 import RequireAuth from './Utilities/RequireAuth/RequireAuth';
 import Blog from '../src/Pages/Blog/Blog';
 import About from '../src/Pages/About/About';
+import Services from './Pages/Home/Services/Services';
 
 
 function App() {
@@ -21,9 +22,10 @@ function App() {
         <Route path="/home" element={<Home></Home>}></Route>
         <Route path="/register" element={<Signup></Signup>}></Route>
         <Route path="/signup" element={<Signup></Signup>}></Route>
-        <Route path=':serviceName' element={<RequireAuth>
+        <Route path='/services/:serviceName' element={<RequireAuth>
           <AvailService></AvailService>
         </RequireAuth>}></Route>
+        <Route path='/services' element={<Services></Services>}></Route>
         <Route path="/login" element={<Login></Login>}></Route>
         <Route path="/blog" element={<Blog></Blog>}></Route>
         <Route path="/about" element={<About></About>}></Route>
