@@ -1,7 +1,7 @@
 # The Doctor Lounge
-## An web app for the patients,that allows to select service from doctor and Portal Log in
+## A web app for the patients,that allows to select service from doctor and Portal Log in
 
-This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
+
 
 ## Freatures
 * Login With Email Password
