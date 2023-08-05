@@ -1,19 +1,19 @@
-a {
+/* a {
     text-decoration: none;
     margin: 6px;
     padding: 6px;
     font-size: 18px;
     color: rgb(255, 255, 255);
     
-}
+} */
 
-a:hover {
+/* a:hover {
     color: rgb(226, 121, 2);
     border-bottom: 4px solid rgb(226, 121, 2);
     transition: 0.4s;
     
 
-}
+} */
 .title {
     text-decoration: none;
     margin: 6px;
@@ -48,14 +48,14 @@ a:hover {
 }
 
 @media screen and (max-width:520px) {
-    a {
+    /* a {
         text-decoration: none;
         margin: 6px;
         padding: 3px;
         font-size: 13px;
         color: rgb(255, 255, 255);
     
-    }
+    } */
 
     .icon-container img {
         height: 30px;

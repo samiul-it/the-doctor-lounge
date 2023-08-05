@@ -1,8 +1,11 @@
 import React, { useRef } from "react";
 import "./Signup.css";
 import auth from "./../../../Firebase/firebase.init";
-import { useCreateUserWithEmailAndPassword, useSendEmailVerification } from "react-firebase-hooks/auth";
-import { Spinner } from "react-bootstrap";
+import {
+  useCreateUserWithEmailAndPassword,
+  useSendEmailVerification,
+} from "react-firebase-hooks/auth";
+
 import { Link, useNavigate } from "react-router-dom";
 import Loading from "../../Loading/Loading";
 import GoogleLogin from "../GoogleLogin/GoogleLogin";
@@ -10,36 +13,33 @@ import { async } from "@firebase/util";
 
 const Signup = () => {
   const [createUserWithEmailAndPassword, user, loading, error] =
-    useCreateUserWithEmailAndPassword(auth, {sendEmailVerification:true});
+    useCreateUserWithEmailAndPassword(auth, { sendEmailVerification: true });
 
-  const [sendEmailVerification, sending] = useSendEmailVerification();  
+  const [sendEmailVerification, sending] = useSendEmailVerification();
   const emailRef = useRef("");
   const nameRef = useRef("");
   const passwordRef = useRef("");
 
-
-  const nevigate=useNavigate();
+  const nevigate = useNavigate();
 
   const handleSubmit = (e) => {
     e.preventDefault();
     const email = emailRef.current.value;
     const password = passwordRef.current.value;
-    createUserWithEmailAndPassword(email,password);
+    createUserWithEmailAndPassword(email, password);
     console.log("User Created!");
-    nevigate("/home");    
+    nevigate("/home");
   };
 
+  const navigateToLogin = () => {
+    nevigate("/login");
+  };
 
-  const navigateToLogin=()=>{
-      nevigate("/login");
+  if (error) {
+    return <h5 className="text-danger"> {error.message}</h5>;
   }
-
-
-  if(error){
-      return <h5 className="text-danger"> {error.message}</h5>
-  }
-  if(loading){
-      return <Loading></Loading>;
+  if (loading) {
+    return <Loading></Loading>;
   }
 
   return (
@@ -76,7 +76,11 @@ const Signup = () => {
       </form>
       <GoogleLogin></GoogleLogin>
       <p>
-        Already have an account? <Link className="text-primary" to="/login" onClick={navigateToLogin}> Login </Link>
+        Already have an account?{" "}
+        <Link to="/login" onClick={navigateToLogin}>
+          {" "}
+          Login{" "}
+        </Link>
       </p>
     </div>
   );
