@@ -220,10 +220,10 @@ const Navbar = () => {
                   </NavLink>
                 </Button>
               ))}
-              {/* {user ? (
+              {user ? (
                 <Button
                   onClick={handleCloseNavMenu}
-                  sx={{ my: 2, color: "white", display: "block" }}
+                  sx={{ my: 0, color: "white", display: "block" }}
                 >
                   <Link to={"/home"} onClick={handleSignOut}>
                     Sign Out
@@ -233,13 +233,13 @@ const Navbar = () => {
                 <>
                   <Button
                     onClick={handleCloseNavMenu}
-                    sx={{ my: 2, color: "white", display: "block" }}
+                    sx={{ my: 0, color: "white", display: "block" }}
                   >
                     <Link to="/login">Login</Link>
                     <Link to="/register">Register</Link>
                   </Button>
                 </>
-              )} */}
+              )}
             </Box>
 
             <Box sx={{ flexGrow: 0 }}>
