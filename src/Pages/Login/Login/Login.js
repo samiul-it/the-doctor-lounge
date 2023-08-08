@@ -30,8 +30,6 @@ const Login = () => {
   const [sendPasswordResetEmail, sending, errorReset] =
     useSendPasswordResetEmail(auth);
 
-  
-
   //Form Control by MUI
 
   //MUI FORM
@@ -138,7 +136,7 @@ const Login = () => {
 
             {/* MUI FORM WITH USE STATE */}
 
-            <form>
+            <form onSubmit={handleClick}>
               <TextField
                 variant="outlined"
                 margin="normal"
@@ -183,7 +181,7 @@ const Login = () => {
                 variant="contained"
                 color="primary"
                 //  className={classes.submit}
-                onClick={handleClick}
+                // onClick={handleClick}
               >
                 Sign In
               </Button>

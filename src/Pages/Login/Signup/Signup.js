@@ -1,5 +1,4 @@
 import React, { useEffect, useRef, useState } from "react";
-import "./Signup.css";
 import auth from "./../../../Firebase/firebase.init";
 import {
   useAuthState,
@@ -109,7 +108,7 @@ const Signup = () => {
 
             {/* MUI FORM WITH USE STATE */}
 
-            <form>
+            <form onSubmit={handleSubmit}>
               <TextField
                 variant="outlined"
                 margin="normal"
@@ -168,9 +167,9 @@ const Signup = () => {
                 variant="contained"
                 color="primary"
                 //  className={classes.submit}
-                onClick={handleSubmit}
+                // onClick={handleSubmit}
               >
-                Sign In
+                Sign Up
               </Button>
             </form>
             <Divider sx={{ mt: 2 }}>

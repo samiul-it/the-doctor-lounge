@@ -34,12 +34,20 @@ const pages = [
     href: "/services",
   },
   {
+    pageName: "My Appoinments",
+    href: "/appoinmnets",
+  },
+  {
     pageName: "Blog",
     href: "/blog",
   },
   {
     pageName: "About",
     href: "/about",
+  },
+  {
+    pageName: "Dashboard",
+    href: "/dashboard",
   },
 ];
 

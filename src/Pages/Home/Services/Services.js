@@ -19,12 +19,14 @@ const Services = ({ hideDescription }) => {
     );
   }
 
+  // console.log(services);
+
   return (
     <div>
       <div className="services-card-container">
         {services.map((service) => (
           <Service
-            key={service.id}
+            key={service._id}
             service={service}
             hideDescription={!hideDescription}
           ></Service>

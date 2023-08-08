@@ -18,6 +18,8 @@ import Blog from "../src/Pages/Blog/Blog";
 import About from "../src/Pages/About/About";
 import Services from "./Pages/Home/Services/Services";
 import ServiceDetail from "./Pages/Home/ServiceDetail/ServiceDetail";
+import Dashboard from "./Pages/Dashboard/Dashboard";
+import ManageServices from "./Pages/Dashboard/ManageServices/ManegServices";
 
 function App() {
   return (
@@ -40,6 +42,13 @@ function App() {
         <Route path="/login" element={<Login></Login>}></Route>
         <Route path="/blog" element={<Blog></Blog>}></Route>
         <Route path="/about" element={<About></About>}></Route>
+
+        <Route path="/dashboard" element={<Dashboard></Dashboard>}>
+          <Route
+            path="manage-services"
+            element={<ManageServices></ManageServices>}
+          ></Route>
+        </Route>
         <Route
           path="/services/service-detail/:service_id"
           element={<ServiceDetail></ServiceDetail>}

@@ -68,7 +68,7 @@ const Service = ({ service, hideDescription }) => {
             </Typography>
             {hideDescription ? (
               <Typography variant="body2" color="text.secondary">
-                {showMore ? description : `${description.substring(0, 250)}`}
+                {showMore ? description : `${description?.substring(0, 250)}`}
 
                 <button style={{ color: "#ff3d47" }} className="btn">
                   See Details
