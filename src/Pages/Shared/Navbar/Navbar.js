@@ -35,7 +35,7 @@ const pages = [
   },
   {
     pageName: "My Appoinments",
-    href: "/appoinmnets",
+    href: "/my-appoinments",
   },
   {
     pageName: "Blog",

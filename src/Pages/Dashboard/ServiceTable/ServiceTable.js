@@ -5,7 +5,9 @@ import TableCell from "@mui/material/TableCell";
 import TableContainer from "@mui/material/TableContainer";
 import TableHead from "@mui/material/TableHead";
 import TableRow from "@mui/material/TableRow";
+import EditIcon from "@mui/icons-material/Edit";
 import Paper from "@mui/material/Paper";
+import DeleteIcon from "@mui/icons-material/Delete";
 import useServices from "../../../hooks/useServices";
 import {
   Avatar,
@@ -17,22 +19,14 @@ import {
   Typography,
 } from "@mui/material";
 import AddCircleIcon from "@mui/icons-material/AddCircle";
+import Loading from "../../Loading/Loading";
+import { toast } from "react-toastify";
 
-function createData(name, calories, fat, carbs, protein) {
-  return { name, calories, fat, carbs, protein };
-}
-
-const rows = [
-  createData("Frozen yoghurt", 159, 6.0, 24, 4.0),
-  createData("Ice cream sandwich", 237, 9.0, 37, 4.3),
-  createData("Eclair", 262, 16.0, 24, 6.0),
-  createData("Cupcake", 305, 3.7, 67, 4.3),
-  createData("Gingerbread", 356, 16.0, 49, 3.9),
-];
 const ServiceTable = () => {
   const [services, setServices, serviceLoading] = useServices();
   const [serviceName, setServiceName] = React.useState("");
-  const [imageLink, setImageLink] = React.useState("");
+  const [description, setDescription] = React.useState("");
+  const [img, setImg] = React.useState("");
   const [fees, setFees] = React.useState("");
 
   // Modal Functions
@@ -42,10 +36,82 @@ const ServiceTable = () => {
 
   const handleFormSubmit = (e) => {
     e.preventDefault();
-    console.log(serviceName, imageLink, fees);
+    // console.log(serviceName, imageLink, fees);
+
+    const newService = {
+      serviceName,
+      fees,
+      description,
+      img,
+    };
+
+    const url = "http://localhost:5000/services";
+    fetch(url, {
+      method: "POST",
+      headers: {
+        "content-type": "application/json",
+      },
+      body: JSON.stringify(newService),
+    })
+      .then((res) => {
+        if (res.status == 403 || 401) {
+          // console.log(res);
+        }
+        return res.json();
+      })
+      .then((result) => console.log(result))
+      .then(toast.success("Service Added !"));
   };
 
-  // Modal Styling for Password Reset
+  // Deleting a service
+
+  const handleDeleteService = (id) => {
+    const confirmDelete = window.confirm("Are you Sure?");
+    if (confirmDelete) {
+      const url = `http://localhost:5000/delete-service/${id}`;
+      fetch(url, {
+        method: "DELETE",
+      })
+        .then((res) => res.json())
+        .then((data) => {
+          console.log(data);
+          toast.info("Service Deleted");
+          const remaining = services.filter((item) => item._id !== id);
+          setServices(remaining);
+        });
+    }
+  };
+
+  // Updating Service
+
+  // const handleServiceUpdate = (e, id) => {
+  //   e.preventDefault();
+
+  //   const descriptionUpdate = descriptionUpdateRef.current.value;
+
+  //   const url = `http://localhost:5000/update-service/${id}`;
+
+  //   fetch(url, {
+  //     method: "PUT",
+  //     headers: {
+  //       "content-type": "application/json",
+  //     },
+  //     body: JSON.stringify({ descriptionUpdate }),
+  //   })
+  //     .then((res) => res.json())
+  //     .then((result) => {
+  //       console.log(result);
+  //       handleClose();
+  //     })
+  //     .then(toast.success("Success!Task Updated"));
+  // };
+
+  const handleUpdate = (id) => {
+    console.log(id);
+    handleOpen();
+  };
+
+  // Modal Styling for
   const style = {
     position: "absolute",
     top: "50%",
@@ -58,7 +124,10 @@ const ServiceTable = () => {
     p: 4,
   };
 
-  //   console.log(services);
+  if (serviceLoading) {
+    return <Loading></Loading>;
+  }
+
   return (
     <div>
       <TableContainer component={Paper}>
@@ -96,7 +165,14 @@ const ServiceTable = () => {
                 </TableCell>
                 <TableCell align="right">{service.fees}</TableCell>
 
-                <TableCell align="right">Action</TableCell>
+                <TableCell align="right">
+                  <Box sx={{ mt: 1 }} variant="contained" color="primary">
+                    {/* <EditIcon onClick={() => handleUpdate(service._id)} /> */}
+                    <DeleteIcon
+                      onClick={() => handleDeleteService(service._id)}
+                    />
+                  </Box>
+                </TableCell>
               </TableRow>
             ))}
             <TableRow>
@@ -146,7 +222,7 @@ const ServiceTable = () => {
               required
               fullWidth
               name="serviceName"
-              label="serviceName"
+              label="Service Name"
               type="text"
               id="serviceName"
               color="secondary"
@@ -161,15 +237,31 @@ const ServiceTable = () => {
               margin="normal"
               required
               fullWidth
+              name="description"
+              label="Description"
+              type="text"
+              id="description"
+              color="secondary"
+              autoFocus
+              value={description}
+              onChange={(event) => {
+                setDescription(event.target.value);
+              }}
+            />
+            <TextField
+              variant="outlined"
+              margin="normal"
+              required
+              fullWidth
               name="image"
-              label="image"
+              label="Image Link"
               type="text"
               id="image"
               color="secondary"
               autoFocus
-              value={imageLink}
+              value={img}
               onChange={(event) => {
-                setImageLink(event.target.value);
+                setImg(event.target.value);
               }}
             />
             <TextField
@@ -178,7 +270,7 @@ const ServiceTable = () => {
               required
               fullWidth
               name="fees"
-              label="fees"
+              label="Fees"
               type="text"
               id="fees"
               color="secondary"
@@ -190,7 +282,7 @@ const ServiceTable = () => {
             />
             <Button
               style={{
-                backgroundColor: "#4caf50",
+                backgroundColor: "#4db2ac",
               }}
               sx={{ mt: 1 }}
               type="submit"

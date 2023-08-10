@@ -29,7 +29,7 @@ const Dashboard = () => {
   return (
     <div>
       <button onClick={toggleDrawer}>Show</button>
-      <Outlet />
+
       <Drawer
         open={isOpen}
         onClose={toggleDrawer}
@@ -60,7 +60,7 @@ const Dashboard = () => {
         </Box>
       </Drawer>
 
-      <li>
+      {/* <li>
         <Link to="/dashboard/add-service">Add New Service</Link>
         <Link to="/dashboard/add-service">Add New Service</Link>
         <Link to="/dashboard/add-service">Add New Service</Link>
@@ -101,7 +101,8 @@ const Dashboard = () => {
             </Grid>
           </Box>
         </Box>
-      </Box>
+      </Box> */}
+      <Outlet />
     </div>
   );
 };

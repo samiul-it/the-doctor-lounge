@@ -27,8 +27,8 @@ const Service = ({ service, hideDescription }) => {
   const [showMore, setShowMore] = React.useState(false);
   const navigate = useNavigate();
 
-  const navigateToAvailService = (serviceName) => {
-    navigate(`/services/${serviceName}`);
+  const navigateToAvailService = (service_id) => {
+    navigate(`/services/${service_id}`);
   };
 
   const navigateToServiceDetail = (_id) => {
@@ -115,7 +115,7 @@ const Service = ({ service, hideDescription }) => {
         <CardActions>
           <Button
             fullWidth
-            onClick={() => navigateToAvailService(serviceName)}
+            onClick={() => navigateToAvailService(_id)}
             variant="contained"
           >
             Take Appoinment

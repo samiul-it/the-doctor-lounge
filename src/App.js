@@ -20,6 +20,8 @@ import Services from "./Pages/Home/Services/Services";
 import ServiceDetail from "./Pages/Home/ServiceDetail/ServiceDetail";
 import Dashboard from "./Pages/Dashboard/Dashboard";
 import ManageServices from "./Pages/Dashboard/ManageServices/ManegServices";
+import Appoinments from "./Pages/Dashboard/Appoinments/Appoinments";
+import MyAppoinments from "./Pages/MyAppoinments/MyAppoinments";
 
 function App() {
   return (
@@ -31,7 +33,7 @@ function App() {
         <Route path="/register" element={<Signup></Signup>}></Route>
         <Route path="/signup" element={<Signup></Signup>}></Route>
         <Route
-          path="/services/:serviceName"
+          path="/services/:service_id"
           element={
             <RequireAuth>
               <AvailService></AvailService>
@@ -42,8 +44,16 @@ function App() {
         <Route path="/login" element={<Login></Login>}></Route>
         <Route path="/blog" element={<Blog></Blog>}></Route>
         <Route path="/about" element={<About></About>}></Route>
+        <Route
+          path="/my-appoinments/:appoinment_id"
+          element={<MyAppoinments></MyAppoinments>}
+        ></Route>
 
         <Route path="/dashboard" element={<Dashboard></Dashboard>}>
+          <Route
+            path="appoinments"
+            element={<Appoinments></Appoinments>}
+          ></Route>
           <Route
             path="manage-services"
             element={<ManageServices></ManageServices>}
