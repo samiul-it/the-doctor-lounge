@@ -3,7 +3,9 @@ import {
   AccordionDetails,
   AccordionSummary,
   Box,
+  Button,
   Grid,
+  IconButton,
   Table,
   TableBody,
   TableCell,
@@ -14,16 +16,23 @@ import {
 } from "@mui/material";
 import DeleteIcon from "@mui/icons-material/Delete";
 import ExpandMoreIcon from "@mui/icons-material/ExpandMore";
-import React from "react";
+import React, { useState } from "react";
 import { useQuery } from "react-query";
 import Loading from "../../Loading/Loading";
 import { toast } from "react-toastify";
+import DoneAllIcon from "@mui/icons-material/DoneAll";
+import CancelIcon from "@mui/icons-material/Cancel";
+import RestoreIcon from "@mui/icons-material/Restore";
 import useServiceDetail from "../../../hooks/useServiceDetail";
 
 const Appoinments = () => {
   const { isLoading, refetch, error, data } = useQuery("all-appoinments", () =>
     fetch(`http://localhost:5000/all-appoinments`).then((res) => res.json())
   );
+
+  const seenStatus = "seen";
+  const rescheduleStatus = "rescheduled";
+  const cancelStatus = "canceled";
 
   // Delete Appoinment
   const handleDeleteAppoinment = (id) => {
@@ -42,11 +51,34 @@ const Appoinments = () => {
     }
   };
 
+  // Updaing Status
+
+  const handleUpdateAppoinmentStatus = (e, id, newStatus) => {
+    e.preventDefault();
+
+    // const descriptionUpdate = descriptionUpdateRef.current.value;
+
+    const url = `http://localhost:5000/appoinment-status/${id}`;
+    console.log(id, newStatus);
+
+    fetch(url, {
+      method: "PUT",
+      headers: {
+        "content-type": "application/json",
+      },
+      body: JSON.stringify({ newStatus }),
+    })
+      .then((res) => res.json())
+      .then((result) => {
+        console.log(result);
+        refetch();
+      })
+      .then(toast.success("Success!Appoinment Status Updated"));
+  };
+
   if (isLoading) {
     return <Loading></Loading>;
   }
-
-  console.log(data);
 
   return (
     <div>
@@ -92,6 +124,7 @@ const Appoinments = () => {
                       <TableCell align="right">Appoinment </TableCell>
 
                       <TableCell align="right">Fees</TableCell>
+                      <TableCell align="right">Status</TableCell>
                       <TableCell align="right">Action</TableCell>
                     </TableRow>
                   </TableHead>
@@ -148,16 +181,65 @@ const Appoinments = () => {
 
                         <TableCell align="right">{appoinment?.fees}</TableCell>
                         <TableCell align="right">
+                          {appoinment?.status}
+                        </TableCell>
+                        <TableCell align="right">
                           <Box
                             sx={{ mt: 1 }}
                             variant="contained"
                             color="primary"
                           >
-                            <DeleteIcon
+                            <Button
+                              disabled={appoinment?.status === "seen"}
+                              onClick={(e) =>
+                                handleUpdateAppoinmentStatus(
+                                  e,
+                                  appoinment?._id,
+                                  seenStatus
+                                )
+                              }
+                              variant="outlined"
+                              startIcon={<DoneAllIcon />}
+                            >
+                              Seen
+                            </Button>
+                            <Button
+                              disabled={appoinment?.status === "seen"}
+                              onClick={(e) =>
+                                handleUpdateAppoinmentStatus(
+                                  e,
+                                  appoinment?._id,
+                                  rescheduleStatus
+                                )
+                              }
+                              variant="outlined"
+                              startIcon={<RestoreIcon />}
+                            >
+                              Reschedule
+                            </Button>
+                            <Button
+                              disabled={appoinment?.status === "seen"}
+                              onClick={(e) =>
+                                handleUpdateAppoinmentStatus(
+                                  e,
+                                  appoinment?._id,
+                                  cancelStatus
+                                )
+                              }
+                              variant="outlined"
+                              startIcon={<CancelIcon />}
+                            >
+                              Cancel
+                            </Button>
+                            <Button
                               onClick={() =>
                                 handleDeleteAppoinment(appoinment?._id)
                               }
-                            />
+                              variant="outlined"
+                              startIcon={<DeleteIcon />}
+                            >
+                              Delete
+                            </Button>
                           </Box>
                         </TableCell>
                       </TableRow>

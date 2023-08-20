@@ -21,9 +21,13 @@ import {
   Divider,
   Stack,
 } from "@mui/material";
+import { useAuthState } from "react-firebase-hooks/auth";
+import auth from "../../../Firebase/firebase.init";
+import Loading from "../../Loading/Loading";
 
 const Service = ({ service, hideDescription }) => {
   const { _id, serviceName, img, description, fees } = service;
+  const [user, loading] = useAuthState(auth);
   const [showMore, setShowMore] = React.useState(false);
   const navigate = useNavigate();
 
@@ -34,6 +38,10 @@ const Service = ({ service, hideDescription }) => {
   const navigateToServiceDetail = (_id) => {
     navigate(`/services/service-detail/${_id}`);
   };
+
+  if (loading) {
+    return <Loading></Loading>;
+  }
 
   // Show More
 
@@ -114,6 +122,12 @@ const Service = ({ service, hideDescription }) => {
 
         <CardActions>
           <Button
+            style={{
+              // borderRadius: 25,
+              backgroundColor: "#e30ba9",
+              padding: "5px 10px",
+              fontSize: "16px",
+            }}
             fullWidth
             onClick={() => navigateToAvailService(_id)}
             variant="contained"

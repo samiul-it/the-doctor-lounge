@@ -230,10 +230,21 @@ const Navbar = () => {
               ))}
               {user ? (
                 <Button
+                  style={{
+                    textDecoration: "none",
+                    textTransform: "uppercase",
+                    color: "white",
+                    textTransform: "capitalize",
+                    display: "block",
+                  }}
                   onClick={handleCloseNavMenu}
                   sx={{ my: 0, color: "white", display: "block" }}
                 >
-                  <Link to={"/home"} onClick={handleSignOut}>
+                  <Link
+                    sx={{ my: 0, color: "white", display: "block" }}
+                    to={"/home"}
+                    onClick={handleSignOut}
+                  >
                     Sign Out
                   </Link>
                 </Button>

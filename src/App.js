@@ -22,11 +22,14 @@ import Dashboard from "./Pages/Dashboard/Dashboard";
 import ManageServices from "./Pages/Dashboard/ManageServices/ManegServices";
 import Appoinments from "./Pages/Dashboard/Appoinments/Appoinments";
 import MyAppoinments from "./Pages/MyAppoinments/MyAppoinments";
+import TempNav from "./Pages/Shared/TempNav/TempNav";
+import MyProfile from "./Pages/Dashboard/MyProfile/MyProfile";
 
 function App() {
   return (
     <div>
-      <Navbar></Navbar>
+      {/* <Navbar></Navbar> */}
+      <TempNav></TempNav>
       <Routes>
         <Route path="/" element={<Home></Home>}></Route>
         <Route path="/home" element={<Home></Home>}></Route>
@@ -45,9 +48,13 @@ function App() {
         <Route path="/blog" element={<Blog></Blog>}></Route>
         <Route path="/about" element={<About></About>}></Route>
         <Route
-          path="/my-appoinments/:appoinment_id"
+          path="/my-appoinments"
           element={<MyAppoinments></MyAppoinments>}
         ></Route>
+        {/* <Route
+          path="/my-appoinments/:appoinment_id"
+          element={<MyAppoinments></MyAppoinments>}
+        ></Route> */}
 
         <Route path="/dashboard" element={<Dashboard></Dashboard>}>
           <Route
@@ -58,6 +65,7 @@ function App() {
             path="manage-services"
             element={<ManageServices></ManageServices>}
           ></Route>
+          <Route path="profile" element={<MyProfile></MyProfile>}></Route>
         </Route>
         <Route
           path="/services/service-detail/:service_id"
@@ -66,7 +74,7 @@ function App() {
 
         <Route path="*" element={<Error></Error>}></Route>
       </Routes>
-      <Footer></Footer>
+      {/* <Footer></Footer> */}
     </div>
   );
 }

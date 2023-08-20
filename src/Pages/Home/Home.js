@@ -19,7 +19,7 @@ const Home = () => {
         </Box>
       </Grid>
       <Services />
-      <Description></Description>
+      {/* <Description></Description> */}
     </div>
   );
 };

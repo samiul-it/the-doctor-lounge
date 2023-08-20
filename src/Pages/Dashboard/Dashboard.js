@@ -1,5 +1,6 @@
 import {
   Box,
+  Button,
   Divider,
   Grid,
   List,
@@ -7,6 +8,8 @@ import {
   ListItemButton,
   ListItemIcon,
   ListItemText,
+  Menu,
+  MenuItem,
   Typography,
 } from "@mui/material";
 import * as React from "react";
@@ -26,8 +29,19 @@ const Dashboard = () => {
     setIsOpen((prevState) => !prevState);
   };
 
+  // Dashboard Menu
+  const [anchorEl, setAnchorEl] = React.useState(null);
+  const open = Boolean(anchorEl);
+  const handleClick = (event) => {
+    setAnchorEl(event.currentTarget);
+  };
+  const handleClose = () => {
+    setAnchorEl(null);
+  };
+
   return (
     <div>
+      <button onClick={toggleDrawer}>Show</button>
       <button onClick={toggleDrawer}>Show</button>
 
       <Drawer
@@ -41,7 +55,7 @@ const Dashboard = () => {
             {[
               { routeName: "Appoinments", path: "appoinments" },
               { routeName: "Manage Services", path: "manage-services" },
-              { routeName: "Patients", path: "patients" },
+              { routeName: "My Profile", path: "profile" },
               { routeName: "Upgrade", path: "upgrade" },
             ].map((route, index) => (
               <ListItem key={index} disablePadding>
@@ -49,8 +63,8 @@ const Dashboard = () => {
                   <ListItemIcon>
                     {index % 2 === 0 ? <InboxIcon /> : <AddchartIcon />}
                   </ListItemIcon>
-                  <Link to={`/dashboard/${route.path}`}>
-                    <ListItemText primary={route.routeName} />
+                  <Link to={`/dashboard/${route?.path}`}>
+                    <ListItemText primary={route?.routeName} />
                   </Link>
                 </ListItemButton>
               </ListItem>
@@ -59,6 +73,44 @@ const Dashboard = () => {
           <Divider />
         </Box>
       </Drawer>
+
+      {/* Dashboard Menu  */}
+
+      <Button
+        id="basic-button"
+        aria-controls={open ? "basic-menu" : undefined}
+        aria-haspopup="true"
+        aria-expanded={open ? "true" : undefined}
+        onClick={handleClick}
+      >
+        Dashboard
+      </Button>
+      <Menu
+        id="basic-menu"
+        anchorEl={anchorEl}
+        open={open}
+        onClose={handleClose}
+        MenuListProps={{
+          "aria-labelledby": "basic-button",
+        }}
+      >
+        <MenuItem
+          to={"/dashboard/appoinments"}
+          component={Link}
+          onClick={handleClose}
+        >
+          Appoinments
+        </MenuItem>
+        <MenuItem
+          to={"/dashboard/manage-services"}
+          component={Link}
+          onClick={handleClose}
+        >
+          Manage Services
+        </MenuItem>
+        <MenuItem onClick={handleClose}>Patients</MenuItem>
+        <MenuItem onClick={handleClose}>Upgrade</MenuItem>
+      </Menu>
 
       {/* <li>
         <Link to="/dashboard/add-service">Add New Service</Link>

@@ -23,10 +23,9 @@ const ServiceDetail = () => {
   const [serviceDetail, serviceDetailLoading] = useServiceDetail(service_id);
   const { serviceName, _id, description, img, fees } = serviceDetail;
 
-  const navigateToAvailService = (serviceName) => {
-    navigate(`/services/${serviceName}`);
+  const navigateToAvailService = (service_id) => {
+    navigate(`/services/${service_id}`);
   };
-
   if (serviceDetailLoading) {
     return (
       <Box sx={{ display: "flex" }}>
@@ -106,7 +105,7 @@ const ServiceDetail = () => {
           </Box>
           <Box sx={{ mt: 3, ml: 1, mb: 1 }}>
             <Button
-              onClick={() => navigateToAvailService(serviceName)}
+              onClick={() => navigateToAvailService(_id)}
               variant="contained"
               fullWidth
             >
