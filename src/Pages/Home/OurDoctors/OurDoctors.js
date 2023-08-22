@@ -13,43 +13,45 @@ import {
 } from "@mui/material";
 import React from "react";
 
-const StyledDescription = () => {
+const OurDoctors = () => {
   const cardDescriptions = [
     {
-      shortTitle: "A BETTER LIFE",
-      largeTitle: "Heart surgery",
-      imageLink: "https://customerthink.com/wp-content/uploads/lady-doctor.jpg",
+      designation: "Dermatologist",
+      doctorName: "Clara Cox",
+      imageLink:
+        "https://media.istockphoto.com/id/1346711310/photo/portrait-of-smiling-female-doctor-wearing-uniform-standing.webp?b=1&s=170667a&w=0&k=20&c=MP4Uz3zLO_2i8WGmcYaQgz8mOh2IrRjf5byFhqKRroY=",
       description:
         "Uniquely deploy cross-unit benefits with wireless testing procedures. Collaboratively build backward compatible relationships whereas tactical paradigms.",
       link: "",
-      cardColor: "#de1d3c",
+      cardColor: "#ffd740",
     },
     {
-      shortTitle: "GETTING A NEW CHANCE",
-      largeTitle: "Heart surgery",
+      designation: "GETTING A NEW CHANCE",
+      doctorName: "Heart surgery",
       imageLink:
-        "https://www.staffcare.com/siteassets/blogs/locum-tenens-news/building-patient-doctor-trust.jpg",
+        "https://img.freepik.com/premium-photo/covid-19-coronavirus-outbreak-healthcare-workers-pandemic-concept_1258-19738.jpg",
       description:
         "Uniquely deploy cross-unit benefits with wireless testing procedures. Collaboratively build backward compatible relationships whereas tactical paradigms.",
       link: "",
-      cardColor: "#d51030",
+      cardColor: "#ffc400",
     },
     {
-      shortTitle: "SAVING LIVES",
-      largeTitle: "Heart surgery",
+      designation: "SAVING LIVES",
+      doctorName: "Heart surgery",
       imageLink:
-        "https://completewellbeing.com/wp-content/uploads/2017/02/is-it-time-to-change-your-doctor.jpg",
+        "https://t4.ftcdn.net/jpg/02/20/30/45/360_F_220304581_3BRbk3UhoYrcVlt72fdBcVRHBtHAKuvD.jpg",
       description:
         "Uniquely deploy cross-unit benefits with wireless testing procedures. Collaboratively build backward compatible relationships whereas tactical paradigms.",
       link: "",
-      cardColor: "#c60c2a",
+      cardColor: "#ffab00",
     },
   ];
+
   return (
     <Box sx={{ marginTop: { xs: 5, lg: 5 }, marginBottom: 5 }}>
       <Grid sx={{ flexGrow: 1 }} container spacing={2}>
         <Grid item xs={12}>
-          <Grid container justifyContent="center" spacing="0">
+          <Grid container justifyContent="center" spacing="15">
             {cardDescriptions.map((cardDescription, index) => (
               <Grid key={index} item>
                 <Card sx={{ borderRadius: 0, maxWidth: { xs: 300, lg: 340 } }}>
@@ -64,13 +66,12 @@ const StyledDescription = () => {
                       height: 300,
                       backgroundColor: cardDescription.cardColor,
                       "&:hover": {
-                        backgroundColor: "#d51030",
+                        backgroundColor: "#ffe082",
                         opacity: [0.9, 0.8, 0.7],
                       },
                     }}
                   >
                     <Typography
-                      color="#ffebee"
                       gutterBottom
                       variant="h6"
                       component="div"
@@ -78,7 +79,7 @@ const StyledDescription = () => {
                         fontFamily: "Helvetica",
                       }}
                     >
-                      {cardDescription.shortTitle}
+                      {cardDescription.designation}
                     </Typography>
                     <Divider
                       gutterBottom
@@ -91,27 +92,22 @@ const StyledDescription = () => {
                         margin: 2,
                       }}
                     />
-                    <Typography
-                      color="#ffebee"
-                      gutterBottom
-                      variant="h4"
-                      component="div"
-                    >
-                      {cardDescription.largeTitle}
+                    <Typography gutterBottom variant="h4" component="div">
+                      {cardDescription.doctorName}
                     </Typography>
-                    <Typography variant="body2" color="#ffebee">
+                    <Typography variant="body2">
                       {cardDescription.description}
                     </Typography>
 
                     <Button
                       style={{
-                        backgroundColor: "#ffebee",
-                        color: "#212121",
+                        backgroundColor: "#388e3c",
+                        color: "#ffebee",
                       }}
                       sx={{ marginTop: 5, borderRadius: 28 }}
                       variant="contained"
                     >
-                      Know More
+                      See Full Profile
                     </Button>
                   </CardContent>
                 </Card>
@@ -124,4 +120,4 @@ const StyledDescription = () => {
   );
 };
 
-export default StyledDescription;
+export default OurDoctors;
