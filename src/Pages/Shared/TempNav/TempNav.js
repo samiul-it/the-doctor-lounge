@@ -1,4 +1,4 @@
-import { Avatar, Box, Menu, MenuItem, Stack } from "@mui/material";
+import { Avatar, Box, CardMedia, Menu, MenuItem, Stack } from "@mui/material";
 import React from "react";
 import { useAuthState } from "react-firebase-hooks/auth";
 import { Link } from "react-router-dom";
@@ -83,9 +83,16 @@ const TempNav = (props) => {
 
   const drawer = (
     <Box onClick={handleDrawerToggle} sx={{ textAlign: "center" }}>
-      <Typography variant="h6" sx={{ my: 2 }}>
-        DermaCare Online
-      </Typography>
+      <CardMedia
+        component="img"
+        sx={{
+          width: { xs: 100, lg: 120 },
+          marginTop: { xs: 0, lg: 0 },
+          margin: "auto",
+        }}
+        image="https://i.ibb.co/t8xLK9X/2De.png"
+        alt="Live from space album cover"
+      />
       <Divider />
       <List>
         {navItems.map((item, index) => (
@@ -125,7 +132,7 @@ const TempNav = (props) => {
     <div>
       <Box sx={{ display: "flex" }}>
         <CssBaseline />
-        <AppBar component="nav">
+        <AppBar sx={{ backgroundColor: "#fff" }} elevation={1} component="nav">
           <Toolbar>
             <IconButton
               color="inherit"
@@ -134,15 +141,18 @@ const TempNav = (props) => {
               onClick={handleDrawerToggle}
               sx={{ mr: 2, display: { sm: "none" } }}
             >
-              <MenuIcon />
+              <MenuIcon sx={{ color: "#ff1744" }} />
             </IconButton>
-            <Typography
-              variant="h6"
-              component="div"
-              sx={{ flexGrow: 1, display: { xs: "none", sm: "block" } }}
-            >
-              DermaCare Online
-            </Typography>
+            <CardMedia
+              component="img"
+              sx={{
+                width: { xs: 100, lg: 120 },
+                marginTop: { xs: 0, lg: 0 },
+                margin: "auto",
+              }}
+              image="https://i.ibb.co/t8xLK9X/2De.png"
+              alt="Live from space album cover"
+            />
             <Box sx={{ display: { xs: "none", sm: "block" } }}>
               {navItems.map((item, index) =>
                 index === 5 ? (
@@ -153,7 +163,10 @@ const TempNav = (props) => {
                     aria-haspopup="true"
                     aria-expanded={open ? "true" : undefined}
                     onClick={handleClick}
-                    sx={{ color: "#fff" }}
+                    sx={{
+                      color: "#00bfa5",
+                      fontFamily: "Segoe UI",
+                    }}
                   >
                     Dashboard
                   </Button>
@@ -162,23 +175,31 @@ const TempNav = (props) => {
                     component={Link}
                     to={item?.to}
                     key={index}
-                    sx={{ color: "#fff" }}
+                    sx={{ color: "#00bfa5", fontFamily: "Segoe UI" }}
                   >
                     {item?.pageName}
                   </Button>
                 )
               )}
               {user ? (
-                <Button onClick={handleSignOut} sx={{ color: "white" }}>
+                <Button onClick={handleSignOut} sx={{ color: "#ff1744" }}>
                   <Avatar alt="Remy Sharp" src={user?.photoURL} />
                   Sign Out
                 </Button>
               ) : (
                 <>
-                  <Button component={Link} to="/login" sx={{ color: "#fff" }}>
+                  <Button
+                    component={Link}
+                    to="/login"
+                    sx={{ color: "#00bfa5" }}
+                  >
                     Login
                   </Button>
-                  <Button component={Link} to="/signup" sx={{ color: "#fff" }}>
+                  <Button
+                    component={Link}
+                    to="/signup"
+                    sx={{ color: "#00bfa5" }}
+                  >
                     Sign Up
                   </Button>
                 </>

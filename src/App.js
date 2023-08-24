@@ -1,15 +1,8 @@
-// import "./App.css";
-// MUI Roboto FRONT
-// import "@fontsource/roboto/300.css";
-// import "@fontsource/roboto/400.css";
-// import "@fontsource/roboto/500.css";
-// import "@fontsource/roboto/700.css";
-
 import Navbar from "./Pages/Shared/Navbar/Navbar";
 import Home from "./Pages/Home/Home";
 import Signup from "./Pages/Login/Signup/Signup";
 import Login from "./Pages/Login/Login/Login";
-import Footer from "./Pages/Shared/Footer/Footer";
+
 import { Route, Routes } from "react-router-dom";
 import Error from "./Pages/Home/Error/Error";
 import AvailService from "./Pages/AvailService/AvailService";
@@ -24,6 +17,7 @@ import Appoinments from "./Pages/Dashboard/Appoinments/Appoinments";
 import MyAppoinments from "./Pages/MyAppoinments/MyAppoinments";
 import TempNav from "./Pages/Shared/TempNav/TempNav";
 import MyProfile from "./Pages/Dashboard/MyProfile/MyProfile";
+import Footer from "./Pages/Shared/Footer/Footer";
 
 function App() {
   return (
@@ -74,7 +68,7 @@ function App() {
 
         <Route path="*" element={<Error></Error>}></Route>
       </Routes>
-      {/* <Footer></Footer> */}
+      <Footer></Footer>
     </div>
   );
 }

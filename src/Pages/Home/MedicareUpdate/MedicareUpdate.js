@@ -75,8 +75,8 @@ const MedicareUpdate = () => {
             <Button
               sx={{
                 borderRadius: 28,
-                height: { xs: 50, lg: 60 },
-                fontSize: 20,
+                height: { xs: 50, lg: 55 },
+                fontSize: 18,
                 backgroundColor: "#ff6f00",
               }}
               variant="contained"
