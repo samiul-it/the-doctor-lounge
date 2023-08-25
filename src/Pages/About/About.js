@@ -1,5 +1,4 @@
 import React from "react";
-import profileImg from "../../Resources/Images/profile-img.png";
 import "./About.css";
 import useServices from "../../hooks/useServices";
 
@@ -7,9 +6,7 @@ const About = () => {
   return (
     <div>
       <div className="about-container">
-        <div className="profile-img">
-          <img src={profileImg} alt="Image-Samiul" />
-        </div>
+        <div className="profile-img"></div>
         <div className="description">
           <h3 className="text-success">Samiul Islam Talukdar</h3>
           <h5 className="text-success">BSc in CSE</h5>

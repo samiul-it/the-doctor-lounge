@@ -1,10 +1,8 @@
 import React from "react";
 import AvailService from "../AvailService/AvailService";
 import Footer from "../Shared/Footer/Footer";
-import Description from "./Description/Description";
 import "./Home.css";
 import Services from "./Services/Services";
-import BannerMUI from "./BannerMUI/BannerMUI";
 import { Box, Grid } from "@mui/material";
 import StyledDescription from "./StyledDescription/StyledDescription";
 import DoctorBanner from "./DoctorBanner/DoctorBanner";
@@ -18,8 +16,7 @@ import SlidingBanner from "./SlidingBanner/SlidingBanner";
 const Home = () => {
   return (
     <div>
-      <BannerMUI></BannerMUI>
-      {/* <SlidingBanner></SlidingBanner> */}
+      <SlidingBanner></SlidingBanner>
 
       <StyledDescription></StyledDescription>
       <DoctorBanner></DoctorBanner>

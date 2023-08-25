@@ -1,4 +1,3 @@
-import Navbar from "./Pages/Shared/Navbar/Navbar";
 import Home from "./Pages/Home/Home";
 import Signup from "./Pages/Login/Signup/Signup";
 import Login from "./Pages/Login/Login/Login";
@@ -22,7 +21,6 @@ import Footer from "./Pages/Shared/Footer/Footer";
 function App() {
   return (
     <div>
-      {/* <Navbar></Navbar> */}
       <TempNav></TempNav>
       <Routes>
         <Route path="/" element={<Home></Home>}></Route>

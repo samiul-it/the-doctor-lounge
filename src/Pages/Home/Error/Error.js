@@ -1,11 +1,14 @@
-import React from 'react';
+import { Alert } from "@mui/material";
+import React from "react";
 
 const Error = () => {
-    return (
-        <div>
-            <h1 className='text-danger'>Error 404 Not Found</h1>
-        </div>
-    );
+  return (
+    <div>
+      <Alert variant="filled" severity="error">
+        404- Not Found
+      </Alert>
+    </div>
+  );
 };
 
 export default Error;
