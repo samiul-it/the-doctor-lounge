@@ -101,6 +101,8 @@ const PatientTestimonial = () => {
       </Typography>
 
       <Typography
+        data-aos="zoom-in"
+        data-aos-duration="1500"
         color="#e0f2f1"
         gutterBottom
         component="div"
@@ -153,6 +155,10 @@ const PatientTestimonial = () => {
                     }}
                   >
                     <Badge
+                      data-aos="fade-left"
+                      data-aos-anchor="#example-anchor"
+                      data-aos-offset="500"
+                      data-aos-duration="1600"
                       overlap="circular"
                       anchorOrigin={{ vertical: "bottom", horizontal: "right" }}
                       badgeContent={
@@ -169,6 +175,9 @@ const PatientTestimonial = () => {
                       }
                     >
                       <Avatar
+                        data-aos="fade-up"
+                        data-aos-easing="linear"
+                        data-aos-duration="1500"
                         alt="Travis Howard"
                         sx={{ width: 150, height: 150, margin: "auto" }}
                         src={cardDescription.profilePicture}

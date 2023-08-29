@@ -30,6 +30,8 @@ const DoctorBanner = () => {
         alignItems="center"
       >
         <Box
+          data-aos="zoom-in-down"
+          data-aos-duration="2000"
           display="flex"
           justifyContent="center"
           alignItems="center"
@@ -164,6 +166,9 @@ const DoctorBanner = () => {
         </Box>
 
         <Box
+          data-aos="zoom-in-left"
+          data-aos-duration="2000"
+          data-aos-easing="ease-in-sine"
           sx={{
             height: { xs: 450, lg: 600 },
             width: { xs: "100%", lg: "50%" },

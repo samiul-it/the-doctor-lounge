@@ -26,8 +26,8 @@ const OurDoctors = () => {
       cardColor: "#ffd740",
     },
     {
-      designation: "GETTING A NEW CHANCE",
-      doctorName: "Heart surgery",
+      designation: "Acne Specialist",
+      doctorName: "Dave Mkenzie",
       imageLink:
         "https://img.freepik.com/premium-photo/covid-19-coronavirus-outbreak-healthcare-workers-pandemic-concept_1258-19738.jpg",
       description:
@@ -36,8 +36,8 @@ const OurDoctors = () => {
       cardColor: "#ffc400",
     },
     {
-      designation: "SAVING LIVES",
-      doctorName: "Heart surgery",
+      designation: "Dermatological Surgery",
+      doctorName: "Laury Evans",
       imageLink:
         "https://t4.ftcdn.net/jpg/02/20/30/45/360_F_220304581_3BRbk3UhoYrcVlt72fdBcVRHBtHAKuvD.jpg",
       description:
@@ -49,7 +49,13 @@ const OurDoctors = () => {
 
   return (
     <Box sx={{ marginTop: { xs: 5, lg: 5 }, marginBottom: 5 }}>
-      <Grid sx={{ flexGrow: 1 }} container spacing={2}>
+      <Grid
+        data-aos="fade-up"
+        data-aos-duration="2000"
+        sx={{ flexGrow: 1 }}
+        container
+        spacing={2}
+      >
         <Grid item xs={12}>
           <Grid container justifyContent="center" spacing="15">
             {cardDescriptions.map((cardDescription, index) => (

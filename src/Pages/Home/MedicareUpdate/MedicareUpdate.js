@@ -15,6 +15,10 @@ const MedicareUpdate = () => {
       alignItems="center"
     >
       <Box
+        data-aos="fade-right"
+        data-aos-offset="300"
+        data-aos-duration="1500"
+        data-aos-easing="ease-in-sine"
         display="flex"
         justifyContent="center"
         alignItems="center"
@@ -51,6 +55,10 @@ const MedicareUpdate = () => {
         </Grid>
       </Box>
       <Box
+        data-aos="fade-left"
+        data-aos-duration="1500"
+        data-aos-offset="300"
+        data-aos-easing="ease-in-sine"
         display="flex"
         justifyContent="center"
         alignItems="center"

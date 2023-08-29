@@ -68,6 +68,9 @@ const IconedDescription = () => {
                   >
                     {index === 0 ? (
                       <MonitorHeartIcon
+                        data-aos="fade-right"
+                        data-aos-duration="1500"
+                        data-aos-easing="ease-in-sine"
                         sx={{
                           "&:hover": {
                             color: "#212121",
@@ -82,6 +85,9 @@ const IconedDescription = () => {
                     )}
                     {index === 1 ? (
                       <HeartBrokenIcon
+                        data-aos="fade-right"
+                        data-aos-duration="1500"
+                        data-aos-easing="ease-in-sine"
                         sx={{
                           "&:hover": {
                             color: "#212121",
@@ -96,6 +102,9 @@ const IconedDescription = () => {
                     )}
                     {index === 2 ? (
                       <SpaIcon
+                        data-aos="fade-right"
+                        data-aos-duration="1500"
+                        data-aos-easing="ease-in-sine"
                         sx={{
                           "&:hover": {
                             color: "#212121",
@@ -110,6 +119,8 @@ const IconedDescription = () => {
                     )}
 
                     <Typography
+                      data-aos="fade-up"
+                      data-aos-duration="1500"
                       color="#9c27b0"
                       gutterBottom
                       variant="h6"
@@ -122,7 +133,8 @@ const IconedDescription = () => {
                       {cardDescription.shortTitle}
                     </Typography>
                     <Divider
-                      gutterBottom
+                      data-aos="fade-up"
+                      data-aos-duration="1500"
                       sx={{
                         width: "100%",
                       }}
@@ -133,6 +145,8 @@ const IconedDescription = () => {
                       }}
                     />
                     <Typography
+                      data-aos="fade-up"
+                      data-aos-duration="1500"
                       color="#9c27b0"
                       gutterBottom
                       variant="h5"
@@ -140,7 +154,12 @@ const IconedDescription = () => {
                     >
                       {cardDescription.title}
                     </Typography>
-                    <Typography variant="body2" color="#9c27b0">
+                    <Typography
+                      data-aos="fade-up"
+                      data-aos-duration="1500"
+                      variant="body2"
+                      color="#9c27b0"
+                    >
                       {cardDescription.description}
                     </Typography>
                   </CardContent>

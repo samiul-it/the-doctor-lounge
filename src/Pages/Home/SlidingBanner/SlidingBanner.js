@@ -27,8 +27,8 @@ const SlidingBanner = () => {
               }}
             >
               <CardContent
+                data-aos="fade-up"
                 sx={{
-                  backgroundColor: "#ffe082",
                   marginBottom: { lg: 10 },
                 }}
               >
@@ -126,8 +126,8 @@ const SlidingBanner = () => {
               }}
             >
               <CardContent
+                data-aos="fade-left"
                 sx={{
-                  backgroundColor: "#ffe082",
                   marginBottom: { lg: 10 },
                 }}
               >

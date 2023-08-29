@@ -26,7 +26,7 @@ const StyledDescription = () => {
     },
     {
       shortTitle: "GETTING A NEW CHANCE",
-      largeTitle: "Heart surgery",
+      largeTitle: "Derma Treatment",
       imageLink:
         "https://www.staffcare.com/siteassets/blogs/locum-tenens-news/building-patient-doctor-trust.jpg",
       description:
@@ -36,7 +36,7 @@ const StyledDescription = () => {
     },
     {
       shortTitle: "SAVING LIVES",
-      largeTitle: "Heart surgery",
+      largeTitle: "Acne",
       imageLink:
         "https://completewellbeing.com/wp-content/uploads/2017/02/is-it-time-to-change-your-doctor.jpg",
       description:
@@ -52,7 +52,12 @@ const StyledDescription = () => {
           <Grid container justifyContent="center" spacing="0">
             {cardDescriptions.map((cardDescription, index) => (
               <Grid key={index} item>
-                <Card sx={{ borderRadius: 0, maxWidth: { xs: 300, lg: 340 } }}>
+                <Card
+                  data-aos="fade-right"
+                  data-aos-offset="300"
+                  data-aos-easing="ease-in-sine"
+                  sx={{ borderRadius: 0, maxWidth: { xs: 300, lg: 340 } }}
+                >
                   <CardMedia
                     component="img"
                     height="240"

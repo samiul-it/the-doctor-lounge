@@ -24,6 +24,10 @@ const Subscribe = () => {
       alignItems="center"
     >
       <Box
+        data-aos="fade-right"
+        data-aos-offset="300"
+        data-aos-easing="ease-in-sine"
+        data-aos-duration="1500"
         display="flex"
         justifyContent="center"
         alignItems="center"
@@ -110,6 +114,10 @@ const Subscribe = () => {
         </Grid>
       </Box>
       <Box
+        data-aos="fade-left"
+        data-aos-offset="300"
+        data-aos-easing="ease-in-sine"
+        data-aos-duration="1500"
         sx={{
           height: { xs: 350, lg: 500 },
           width: { xs: "100%", lg: "50%" },

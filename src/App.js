@@ -1,7 +1,8 @@
 import Home from "./Pages/Home/Home";
 import Signup from "./Pages/Login/Signup/Signup";
 import Login from "./Pages/Login/Login/Login";
-
+import AOS from "aos";
+import "aos/dist/aos.css";
 import { Route, Routes } from "react-router-dom";
 import Error from "./Pages/Home/Error/Error";
 import AvailService from "./Pages/AvailService/AvailService";
@@ -19,6 +20,7 @@ import MyProfile from "./Pages/Dashboard/MyProfile/MyProfile";
 import Footer from "./Pages/Shared/Footer/Footer";
 
 function App() {
+  AOS.init();
   return (
     <div>
       <TempNav></TempNav>

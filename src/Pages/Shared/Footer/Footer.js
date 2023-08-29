@@ -62,6 +62,8 @@ const Footer = () => {
       }}
     >
       <Box
+        data-aos="fade-up"
+        data-aos-duration="1500"
         sx={{
           width: { xs: "80%", lg: "50%" },
           height: { xs: 250, lg: 170 },
