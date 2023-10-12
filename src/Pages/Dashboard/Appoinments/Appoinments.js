@@ -27,7 +27,7 @@ import useServiceDetail from "../../../hooks/useServiceDetail";
 
 const Appoinments = () => {
   const { isLoading, refetch, error, data } = useQuery("all-appoinments", () =>
-    fetch(`http://localhost:5000/all-appoinments`).then((res) => res.json())
+    fetch(`https://dermacare-server.onrender.com/all-appoinments`).then((res) => res.json())
   );
 
   const seenStatus = "seen";
@@ -38,7 +38,7 @@ const Appoinments = () => {
   const handleDeleteAppoinment = (id) => {
     const confirmDelete = window.confirm("Are you Sure?");
     if (confirmDelete) {
-      const url = `http://localhost:5000/all-appoinments/${id}`;
+      const url = `https://dermacare-server.onrender.com/all-appoinments/${id}`;
       fetch(url, {
         method: "DELETE",
       })
@@ -58,7 +58,7 @@ const Appoinments = () => {
 
     // const descriptionUpdate = descriptionUpdateRef.current.value;
 
-    const url = `http://localhost:5000/appoinment-status/${id}`;
+    const url = `https://dermacare-server.onrender.com/appoinment-status/${id}`;
     console.log(id, newStatus);
 
     fetch(url, {

@@ -164,7 +164,7 @@ const TempNav = (props) => {
                     aria-expanded={open ? "true" : undefined}
                     onClick={handleClick}
                     sx={{
-                      color: "#00bfa5",
+                      color: "#ff1744",
                       fontFamily: "Segoe UI",
                     }}
                   >
@@ -175,7 +175,7 @@ const TempNav = (props) => {
                     component={Link}
                     to={item?.to}
                     key={index}
-                    sx={{ color: "#00bfa5", fontFamily: "Segoe UI" }}
+                    sx={{ color: "#ff1744", fontFamily: "Segoe UI" }}
                   >
                     {item?.pageName}
                   </Button>
@@ -191,14 +191,14 @@ const TempNav = (props) => {
                   <Button
                     component={Link}
                     to="/login"
-                    sx={{ color: "#00bfa5" }}
+                    sx={{ color: "#ff1744" }}
                   >
                     Login
                   </Button>
                   <Button
                     component={Link}
                     to="/signup"
-                    sx={{ color: "#00bfa5" }}
+                    sx={{ color: "#ff1744" }}
                   >
                     Sign Up
                   </Button>

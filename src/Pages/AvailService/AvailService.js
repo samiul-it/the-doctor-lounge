@@ -37,7 +37,7 @@ const AvailService = () => {
 
   const { isLoading, refetch, error, data } = useQuery("appoinmentExist", () =>
     fetch(
-      `http://localhost:5000/appoinment-by-serviceid/${service_id}/${user?.email}`
+      `https://dermacare-server.onrender.com/appoinment-by-serviceid/${service_id}/${user?.email}`
     ).then((res) => res.json())
   );
 
@@ -104,7 +104,7 @@ const AvailService = () => {
     };
     // console.log(appoinmentDetails);
 
-    const url = "http://localhost:5000/appoinments";
+    const url = "https://dermacare-server.onrender.com/appoinments";
     fetch(url, {
       method: "POST",
       headers: {

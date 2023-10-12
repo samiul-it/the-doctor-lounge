@@ -6,7 +6,7 @@ const useServiceDetail = (id) => {
   const [serviceDetailLoading, setServiceDetailLoading] = useState(true);
   // console.log(id);
   useEffect(() => {
-    fetch(`http://localhost:5000/services/${id}`)
+    fetch(`https://dermacare-server.onrender.com/services/${id}`)
       .then((res) => res.json())
       .then((data) => {
         setServiceDetail(data);

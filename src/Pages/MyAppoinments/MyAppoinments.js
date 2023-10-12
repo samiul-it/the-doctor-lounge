@@ -22,7 +22,7 @@ const MyAppoinments = () => {
   const [user, loading] = useAuthState(auth);
 
   const { isLoading, refetch, error, data } = useQuery("myAppoinment", () =>
-    fetch(`http://localhost:5000/my-appoinments/email/${user?.email}`).then(
+    fetch(`https://dermacare-server.onrender.com/my-appoinments/email/${user?.email}`).then(
       (res) => res.json()
     )
   );

@@ -45,7 +45,7 @@ const ServiceTable = () => {
       img,
     };
 
-    const url = "http://localhost:5000/services";
+    const url = "https://dermacare-server.onrender.com/services";
     fetch(url, {
       method: "POST",
       headers: {
@@ -68,7 +68,7 @@ const ServiceTable = () => {
   const handleDeleteService = (id) => {
     const confirmDelete = window.confirm("Are you Sure?");
     if (confirmDelete) {
-      const url = `http://localhost:5000/delete-service/${id}`;
+      const url = `https://dermacare-server.onrender.com/delete-service/${id}`;
       fetch(url, {
         method: "DELETE",
       })
@@ -89,7 +89,7 @@ const ServiceTable = () => {
 
   //   const descriptionUpdate = descriptionUpdateRef.current.value;
 
-  //   const url = `http://localhost:5000/update-service/${id}`;
+  //   const url = `https://dermacare-server.onrender.com/update-service/${id}`;
 
   //   fetch(url, {
   //     method: "PUT",
