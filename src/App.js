@@ -18,8 +18,6 @@ import MyAppoinments from "./Pages/MyAppoinments/MyAppoinments";
 import TempNav from "./Pages/Shared/TempNav/TempNav";
 import MyProfile from "./Pages/Dashboard/MyProfile/MyProfile";
 import Footer from "./Pages/Shared/Footer/Footer";
-import { Sugar } from "react-preloaders2";
-import { Lines } from "react-preloaders2";
 
 function App() {
   AOS.init();
@@ -71,8 +69,6 @@ function App() {
         <Route path="*" element={<Error></Error>}></Route>
       </Routes>
       <Footer></Footer>
-
-      <Sugar time={3500} background="#ff1744" color="#ffffff" />
     </div>
   );
 }
